@@ -5,6 +5,7 @@ export default function Forecast(props){
     // console.log(props.name)
     var picture = "";
     var nameProv = "";
+    
     if (props.name == "Hat Yai") {
         nameProv = props.name;
         picture = require("../image/Hatyai.jpg");
@@ -15,7 +16,7 @@ export default function Forecast(props){
     }
     if (props.name == "Pattani") {
         nameProv = props.name;
-        picture = require("../image/Pattani1.jpg");
+        picture = require("../image/Pattani.jpg");
     }
     if (props.name == "Chiang Mai") {
         nameProv = props.name;
@@ -26,21 +27,22 @@ export default function Forecast(props){
         picture = require("../image/Khonkaen.jpg");
     }
     if (props.name == "Chonburi") {
-        nameProv = props.name;
+        nameProv = "Chonburi";
         picture = require("../image/Chonburi.jpg");
     }
 
     var bg = require("../image/Sky.jpg");
-    if(props.main == "Clouds"){
-        bg = require("../image/Cloud.jpg");
-    }
-    if(props.main == "Rain"){
-        bg = require("../image/Rain1.jpg");
-    }
+        if(props.main == "Clouds"){
+            bg = require("../image/Cloud.jpg");
+        }
+        if(props.main == "Rain"){
+            bg = require("../image/Rain1.jpg");
+        }
+
 
 
     return(
-        <ImageBackground /*source={bg}*/ style={styles.backdrop1}>
+        <ImageBackground source={bg} style={styles.backdrop1}>
         <View style={styles.backdrop}>
             <Text style={styles.h1} > {nameProv} </Text>
             <Text style={styles.h2} > {props.main} </Text>
@@ -61,13 +63,13 @@ const styles = StyleSheet.create({
     h1: {
         fontSize: 30, 
         fontWeight: 'bold',
-        color: '#0033CC',
+        color: '#000000',
         paddingTop: '10%',
     },
 
     h2: {
         fontSize: 30,
-        color: '#0033CC',
+        color: '#000000',
         alignItems: 'center',
     },
 

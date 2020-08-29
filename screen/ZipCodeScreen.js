@@ -47,7 +47,7 @@ export default function ZipCodeScreen() {
                         fontSize: 18,
                         paddingTop: '3%',
                         paddingBottom: '3%',
-                        paddingLeft: '45%',
+                        paddingLeft: '38%',
                     }}>GITHUB ME</Text>
                 </TouchableHighlight>
             </View>

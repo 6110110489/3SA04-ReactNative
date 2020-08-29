@@ -33,9 +33,9 @@ export default function Weather(props) {
     },[props.zipCode])
 
     return(
-        <Forecast {...forecastInfo}/>
+        <Forecast {...forecastInfo} />
     );
-    
+
 }
 
 /*const styles = StyleSheet.create({
