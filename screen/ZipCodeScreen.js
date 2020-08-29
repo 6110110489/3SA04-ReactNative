@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         color: '#000000',  
         fontSize: 20,
         paddingTop: '10%',
-        paddingBottom: '10%',
+        paddingBottom: '2%',
         paddingLeft: '20%', 
     },
 
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         color: '#000000',  
         fontSize: 20,
         paddingTop: '10%',
-        paddingBottom: '10%',
+        paddingBottom: '2%',
         paddingRight: '20%',
     },
 
