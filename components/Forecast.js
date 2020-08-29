@@ -1,16 +1,87 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ImageBackground, Image, StyleSheet } from 'react-native'
 
 export default function Forecast(props){
+    // console.log(props.name)
+    var picture = "";
+    var nameProv = "";
+    if (props.name == "Hat Yai") {
+        nameProv = props.name;
+        picture = require("../image/Hatyai.jpg");
+    }
+    if (props.name == "Trang") {
+        nameProv = props.name;
+        picture = require("../image/Trang.jpg");
+    }
+    if (props.name == "Chiang Mai") {
+        nameProv = props.name;
+        picture = require("../image/Chiangmai.jpg");
+    }
+    if (props.name == "Khon Kaen") {
+        nameProv = props.name;
+        picture = require("../image/Khonkaen.jpg");
+    }
+    if (props.name == "Chonburi") {
+        nameProv = props.name;
+        picture = require("../image/Chonburi.png");
+    }
+
+    var bg = require("../image/Sky.jpg");
+    if(props.main == "Clouds"){
+        bg = require("../image/Cloud.jpg");
+    }
+    if(props.main == "Rain"){
+        bg = require("../image/Rain1.jpg");
+    }
+
+
     return(
-        <View>
-            <Text>{props.main}</Text>
-            <Text>{props.description}</Text>
-            <View>
-                <Text>{props.temp}</Text>
-                <Text>°C </Text>
+        <ImageBackground /*source={bg}*/ style={styles.backdrop1}>
+        <View style={styles.backdrop}>
+            <Text style={styles.h1} > {nameProv} </Text>
+            <Text style={styles.h2} > {props.main} </Text>
+            <Text style={styles.h2} > {props.description} </Text>
+            <Text style={styles.h2} > {props.temp} °C </Text>
+            <Text style={styles.h2} > Feel like :{props.feel} °C </Text>
+
+            <View style={{paddingTop: '10%'}}>
+                <Image source={picture} style={{width: 300, height: 200}} />
             </View>
         </View>
-    );
-    
+        </ImageBackground>
+    )
 }
+
+const styles = StyleSheet.create({
+
+    h1: {
+        fontSize: 30, 
+        fontWeight: 'bold',
+        color: '#0033CC',
+        paddingTop: '10%',
+    },
+
+    h2: {
+        fontSize: 30,
+        color: '#0033CC',
+        alignItems: 'center',
+    },
+
+    backdrop: {
+        flexDirection: 'column', //Default Portrait
+        justifyContent: 'center',
+        alignItems: 'center', // opposite of FlexDirection is lanscape
+        width: '100%',
+        height: '100%',
+    },
+
+    backdrop1: {
+        flexDirection: 'column', //Default Portrait
+        justifyContent: 'center',
+        alignItems: 'center', // opposite of FlexDirection is lanscape
+        width: '100%',
+        height: '100%',
+        opacity: 0.7,
+    }
+
+})
