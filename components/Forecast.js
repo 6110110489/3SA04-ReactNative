@@ -13,6 +13,10 @@ export default function Forecast(props){
         nameProv = props.name;
         picture = require("../image/Trang.jpg");
     }
+    if (props.name == "Pattani") {
+        nameProv = props.name;
+        picture = require("../image/Pattani1.jpg");
+    }
     if (props.name == "Chiang Mai") {
         nameProv = props.name;
         picture = require("../image/Chiangmai.jpg");
@@ -23,7 +27,7 @@ export default function Forecast(props){
     }
     if (props.name == "Chonburi") {
         nameProv = props.name;
-        picture = require("../image/Chonburi.png");
+        picture = require("../image/Chonburi.jpg");
     }
 
     var bg = require("../image/Sky.jpg");
@@ -45,7 +49,7 @@ export default function Forecast(props){
             <Text style={styles.h2} > Feel like :{props.feel} °C </Text>
 
             <View style={{paddingTop: '10%'}}>
-                <Image source={picture} style={{width: 300, height: 200}} />
+                <Image source={picture} style={{width: 350, height: 200}} />
             </View>
         </View>
         </ImageBackground>

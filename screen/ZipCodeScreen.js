@@ -1,14 +1,16 @@
 import React from 'react'
-import { FlatList, View, Text, StyleSheet, ImageBackground } from 'react-native'
+import { FlatList, View, Text, StyleSheet, ImageBackground, Linking } from 'react-native'
 import { TouchableHighlight } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
 const AvailableZipItems = [
-    { place: 'Hatyai', code: '90110'},
-    { place: 'Trang', code: '92000'},
     { place: 'Chiangmai', code: '50000'},
-    { place: 'Khonkaen', code: '40000'},
     { place: 'Chonburi', code: '20000'},
+    { place: 'Hatyai', code: '90110'},
+    { place: 'Khonkaen', code: '40000'},
+    { place: 'Pattni', code: '94000'},
+    { place: 'Trang', code: '92000'},
+       
 ]
 
 const ZipItem = ({place, code, navigation}) => (
@@ -37,6 +39,18 @@ export default function ZipCodeScreen() {
                 renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
             />
           </View>
+
+            <View style={{backgroundColor: "#2337f7"}}>
+                <TouchableHighlight onPress={() =>Linking.openURL('https://github.com/6110110489/')}>
+                    <Text style={{
+                        color: '#FFFFFF',  
+                        fontSize: 18,
+                        paddingTop: '3%',
+                        paddingBottom: '3%',
+                        paddingLeft: '45%',
+                    }}>GITHUB ME</Text>
+                </TouchableHighlight>
+            </View>
         </ImageBackground> 
     )
 }
@@ -72,5 +86,6 @@ const styles = StyleSheet.create({
         paddingTop: '10%',
         paddingBottom: '10%',
         paddingRight: '20%',
-    }
+    },
+
 })
