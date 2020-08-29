@@ -75,16 +75,16 @@ const styles = StyleSheet.create({
     zipPlace: {
         color: '#000000',  
         fontSize: 20,
-        paddingTop: '10%',
-        paddingBottom: '2%',
+        paddingTop: '5%',
+        paddingBottom: '5%',
         paddingLeft: '20%', 
     },
 
     zipCode: {
         color: '#000000',  
         fontSize: 20,
-        paddingTop: '10%',
-        paddingBottom: '2%',
+        paddingTop: '5%',
+        paddingBottom: '5%',
         paddingRight: '20%',
     },
 

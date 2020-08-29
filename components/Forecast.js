@@ -39,8 +39,6 @@ export default function Forecast(props){
             bg = require("../image/Rain1.jpg");
         }
 
-
-
     return(
         <ImageBackground source={bg} style={styles.backdrop1}>
         <View style={styles.backdrop}>
